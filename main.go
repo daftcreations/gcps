@@ -32,7 +32,7 @@ func main() {
 	l := []List{}
 
 	// unmarshal to get the desired value
-	if json.Unmarshal(out, &l); err != nil {
+	if err := json.Unmarshal(out, &l); err != nil {
 		log.Fatal(err)
 	}
 
@@ -63,7 +63,7 @@ func main() {
 	}
 
 	// set the given profile
-	if exec.Command("gcloud", "config", "configurations", "activate", seletedProfile).Run(); err != nil {
+	if err := exec.Command("gcloud", "config", "configurations", "activate", seletedProfile).Run(); err != nil {
 		log.Fatal(err)
 	}
 
