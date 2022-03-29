@@ -4,7 +4,7 @@ on:
     paths:
       - "**.go"
       - "go.*"
-      - ".github/workflows/lint.yaml"
+      - ".github/workflows/**"
       - "!**.md"
 
 permissions:
