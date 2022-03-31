@@ -1,0 +1,29 @@
+name: "tagged-release"
+on:
+  push:
+    branches:
+    - main
+    - add-release
+jobs:
+  tagged-release:
+    name: "Tagged Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+      - name: Build for linux/amd64
+        run: go build -o gcps-all-linux-amd64
+      - name: Build for windows
+        run: GOOS=windows go build -o gcps-all-windows-amd64
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: ${{ github.event.inputs.version }}
+          prerelease: false
+          files: |
+            gcps-*

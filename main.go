@@ -17,7 +17,7 @@ type List struct {
 func main() {
 	// seleted profile by user
 	var seletedProfile string
-	// to set activated profile as default 
+	// to set activated profile as default
 	var activeProfile string
 	// list of profiles
 	profileList := []string{}
@@ -56,7 +56,7 @@ func main() {
 		},
 	}
 
-	// ask 
+	// ask
 	err = survey.Ask(p, &seletedProfile)
 	if err != nil {
 		log.Fatal(err)
