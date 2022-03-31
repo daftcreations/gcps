@@ -25,10 +25,10 @@ func PrevProfileFile() (string, error) {
 
 func WriteLastProfile(path, value string) error {
 	dir := filepath.Dir(path)
-	if err := os.MkdirAll(dir, 0755); err != nil {
+	if err := os.MkdirAll(dir, 0750); err != nil {
 		return err
 	}
-	return ioutil.WriteFile(path, []byte(value), 0644)
+	return ioutil.WriteFile(path, []byte(value), 0600)
 }
 
 func ReadLastProfile(path string) (string, error) {

@@ -10,12 +10,6 @@ import (
 	"github.com/naman2706/gcps/pkg/gcp"
 )
 
-// to unmarshal gcloud configurations json
-type List struct {
-	Name     string `json:"name"`
-	IsActive bool   `json:"is_active"`
-}
-
 func main() {
 	// validation
 	if _, err := exec.LookPath("gcloud"); err != nil {
@@ -68,12 +62,18 @@ func main() {
 
 	activeProfile := gcp.GetActiveProfile(list)
 	if activeProfile == "" {
-		file.WriteLastProfile(path, seletedProfile)
+		err := file.WriteLastProfile(path, seletedProfile)
+		if err != nil {
+			log.Fatalf("Error while writing last activate profile: %v", err)
+		}
 	} else if activeProfile == seletedProfile {
 		log.Printf("Activate profile %s. No need to switch again\n", seletedProfile)
 		return
 	} else {
 		file.WriteLastProfile(path, activeProfile)
+		if err != nil {
+			log.Fatalf("Error while writing last activate profile: %v", err)
+		}
 	}
 
 	if err := gcp.SetProfile(seletedProfile); err != nil {
