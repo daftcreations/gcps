@@ -29,6 +29,7 @@ builds:
 archives:
   - id: archives
     format: tar.gz
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
     replacements:
       freebsd: FreeBSD
       openbsd: OpenBSD
@@ -42,6 +43,7 @@ archives:
         format: zip
   - id: bins
     format: binary
+    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
     replacements:
       openbsd: OpenBSD
       freebsd: FreeBSD
