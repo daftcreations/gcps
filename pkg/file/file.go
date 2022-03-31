@@ -23,7 +23,11 @@ func PrevProfileFile() (string, error) {
 	return filepath.Join(home, ".gcps"), nil
 }
 
-func WriteLastProfile(path, value string) error {
+func WriteLastProfile(value string) error {
+	path, err := PrevProfileFile()
+	if err != nil {
+		return err
+	}
 	dir := filepath.Dir(path)
 	if err := os.MkdirAll(dir, 0750); err != nil {
 		return err
@@ -31,7 +35,11 @@ func WriteLastProfile(path, value string) error {
 	return ioutil.WriteFile(path, []byte(value), 0600)
 }
 
-func ReadLastProfile(path string) (string, error) {
+func ReadLastProfile() (string, error) {
+	path, err := PrevProfileFile()
+	if err != nil {
+		return "", err
+	}
 	b, err := ioutil.ReadFile(path)
 	if os.IsNotExist(err) {
 		return "", nil

@@ -27,14 +27,9 @@ func main() {
 		log.Fatalf("Error getting profile list: %v", err)
 	}
 
-	path, err := file.PrevProfileFile()
-	if err != nil {
-		log.Fatalf("Error while getting file: %v", err)
-	}
-
 	if len(os.Args) > 1 {
 		if os.Args[1] == "-" {
-			lastProfile, err := file.ReadLastProfile(path)
+			lastProfile, err := file.ReadLastProfile()
 			if err != nil {
 				log.Fatalf("Error while reading file: %v", err)
 			} else if lastProfile == "" {
@@ -62,7 +57,7 @@ func main() {
 
 	activeProfile := gcp.GetActiveProfile(list)
 	if activeProfile == "" {
-		err := file.WriteLastProfile(path, seletedProfile)
+		err := file.WriteLastProfile(seletedProfile)
 		if err != nil {
 			log.Fatalf("Error while writing last activate profile: %v", err)
 		}
@@ -70,7 +65,7 @@ func main() {
 		log.Printf("Activate profile %s. No need to switch again\n", seletedProfile)
 		return
 	} else {
-		file.WriteLastProfile(path, activeProfile)
+		err := file.WriteLastProfile(activeProfile)
 		if err != nil {
 			log.Fatalf("Error while writing last activate profile: %v", err)
 		}
