@@ -1,0 +1,65 @@
+# This is an example .goreleaser.yml file with some sensible defaults.
+# Make sure to check the documentation at https://goreleaser.com
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+      # - freebsd
+      # - openbsd
+      # - solaris
+    goarch:
+      - amd64
+      - "386"
+      - arm
+      - arm64
+    goarm:
+      - "6"
+      - "7"
+    flags:
+      - -trimpath
+    ldflags:
+      - "-s -w -X main.Version={{.Version}} -X main.CommitSha={{.FullCommit}} -X main.BuildTime={{.Date}}"
+    hooks:
+      post:
+        - cmd: sh -cx 'upx --ultra-brute --best {{ .Path }} || true'
+archives:
+  - id: archives
+    format: tar.gz
+    replacements:
+      freebsd: FreeBSD
+      openbsd: OpenBSD
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+  - id: bins
+    format: binary
+    replacements:
+      openbsd: OpenBSD
+      freebsd: FreeBSD
+      darwin: Darwin
+      linux: Linux
+      windows: Windows
+      386: i386
+      amd64: x86_64
+checksum:
+  name_template: "checksums.txt"
+snapshot:
+  name_template: "{{ incpatch .Version }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+
+sboms:
+  - artifacts: archive
