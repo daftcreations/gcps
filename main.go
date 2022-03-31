@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"os/exec"
@@ -28,7 +29,16 @@ func main() {
 	}
 
 	if len(os.Args) > 1 {
-		if os.Args[1] == "-" {
+		if os.Args[1] == "--help" {
+			fmt.Println("usage: gcps [arguments] or flags")
+			fmt.Print("\t Switch google cloud profile\n\n")
+			fmt.Println("\t Arguments:")
+			fmt.Println("\t\t[name]\tswitch profile to given name.")
+			fmt.Print("\t Flags:\n")
+			fmt.Println("\t\t-\tswitch to previous profile.")
+			fmt.Print("\t\t--help\tto get help about gcps.\n\n")
+			return
+		} else if os.Args[1] == "-" {
 			lastProfile, err := file.ReadLastProfile()
 			if err != nil {
 				log.Fatalf("Error while reading file: %v", err)

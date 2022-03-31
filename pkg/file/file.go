@@ -40,9 +40,10 @@ func ReadLastProfile() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	b, err := ioutil.ReadFile(path)
+	b, err := ioutil.ReadFile(filepath.Clean(path))
 	if os.IsNotExist(err) {
 		return "", nil
 	}
+	filepath.Clean(path)
 	return string(b), err
 }
