@@ -1,71 +1,89 @@
 package main
 
 import (
-	"encoding/json"
+	"fmt"
 	"log"
+	"os"
 	"os/exec"
 
-	"github.com/AlecAivazis/survey/v2"
+	"github.com/naman2706/gcps/pkg/cmd"
+	"github.com/naman2706/gcps/pkg/file"
+	"github.com/naman2706/gcps/pkg/gcp"
 )
 
-// to unmarshal gcloud configurations json
-type List struct {
-	Name     string `json:"name"`
-	IsActive bool   `json:"is_active"`
-}
-
 func main() {
-	// seleted profile by user
+	// validation
+	if _, err := exec.LookPath("gcloud");  err != nil {
+		fmt.Println("gcloud command not found")
+		fmt.Println("Refer to this guide for help to setting up a gcloud")
+		fmt.Println("https://cloud.google.com/sdk/docs/install")
+		return
+	}
+
+	// store seleted profile
 	var seletedProfile string
-	// to set activated profile as default
-	var activeProfile string
-	// list of profiles
-	profileList := []string{}
 
-	// run cmd to get list of profiles
-	out, err := exec.Command("gcloud", "config", "configurations", "list", "--format=json").Output()
+	list, err := gcp.GetProfileList()
 	if err != nil {
-		log.Fatal(err)
+		log.Fatalf("Error getting profile list: %v", err)
 	}
 
-	// temporary list of profiles
-	l := []List{}
+	if len(os.Args) > 1 {
+		if os.Args[1] == "--help" {
+			fmt.Println("usage: gcps [arguments] or flags")
+			fmt.Print("\t Switch google cloud profile\n\n")
+			fmt.Println("\t Arguments:")
+			fmt.Println("\t\t[name]\tswitch profile to given name.")
+			fmt.Print("\t Flags:\n")
+			fmt.Println("\t\t-\tswitch to previous profile.")
+			fmt.Print("\t\t--help\tto get help about gcps.\n\n")
+			return
+		} else if os.Args[1] == "-" {
+			lastProfile, err := file.ReadLastProfile()
+			if err != nil {
+				log.Fatalf("Error while reading file: %v", err)
+			} else if lastProfile == "" {
+				fmt.Println("No previous profile found. Please select profile from below")
+			} else {
+				seletedProfile = lastProfile
+			}
+		} else {
+			isContain := gcp.ContainsProfile(list, os.Args[1])
+			if isContain {
+				seletedProfile = os.Args[1]
+			} else {
+				log.Printf("Given profile %s is invalide please select from below!\n", os.Args[1])
+			}
 
-	// unmarshal to get the desired value
-	if err := json.Unmarshal(out, &l); err != nil {
-		log.Fatal(err)
-	}
-
-	for _, e := range l {
-		if e.IsActive {
-			activeProfile = e.Name
 		}
-		profileList = append(profileList, e.Name)
 	}
 
-	// survey
-	p := []*survey.Question{
-		{
-			Name: "profiles",
-			Prompt: &survey.Select{
-				Message: "Select Profile:",
-				Options: profileList,
-				Default: activeProfile,
-			},
-			Validate: survey.Required,
-		},
+	if len(seletedProfile) == 0 {
+		seletedProfile, err = cmd.GetProfileFromUser(list)
+		if err != nil {
+			log.Fatalf("Error while setting up cli: %v", err)
+		}
 	}
 
-	// ask
-	err = survey.Ask(p, &seletedProfile)
-	if err != nil {
-		log.Fatal(err)
+	activeProfile := gcp.GetActiveProfile(list)
+	if activeProfile == "" {
+		err := file.WriteLastProfile(seletedProfile)
+		if err != nil {
+			log.Fatalf("Error while writing last activate profile: %v", err)
+		}
+	} else if activeProfile == seletedProfile {
+		fmt.Printf("Activate profile %s. No need to switch again\n", seletedProfile)
+		return
+	} else {
+		err := file.WriteLastProfile(activeProfile)
+		if err != nil {
+			log.Fatalf("Error while writing last activate profile: %v", err)
+		}
 	}
 
-	// set the given profile
-	if err := exec.Command("gcloud", "config", "configurations", "activate", seletedProfile).Run(); err != nil {
-		log.Fatal(err)
+	if err := gcp.SetProfile(seletedProfile); err != nil {
+		log.Fatalf("Error setting up the profile: %v", err)
 	}
 
-	log.Printf("Switched profile to %s successfully!!", seletedProfile)
+	fmt.Printf("Switched profile to %s successfully!!\n", seletedProfile)
 }
