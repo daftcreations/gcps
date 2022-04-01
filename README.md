@@ -8,6 +8,7 @@ GCPS allows to switch between google cloud configuration profiles easily.
 ## Installation
 
 ```bash
+# for linux systems
 curl -o gcps https://github.com/Naman2706/gcps/releases/download/latest/gcps-all-{os}-{architecture}
 
 chmod +x ./gcps
@@ -16,15 +17,17 @@ chmod +x ./gcps
 mv ./gcps /usr/local/bin/
 ```
 
-## Features
+## Usage
 
-### Switch to previous profile
 
-```bash
-gcps -
-```
+<img src="demo.gif" width="100%">
 
-- Using `-` with `gcps` will allow you to switch to the previous profile
+- Switch through list `gcps` will return configured profile.
+
+- Switch to particular profile `gcps {profile_name}`
+
+- Switch to previous list `gcps -`
+
 
 ## Future Developement
 
