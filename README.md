@@ -29,6 +29,6 @@ mv ./gcps /usr/local/bin/
 - Switch to previous profile `gcps -`
 
 
-## Future Developement
+## Future Development
 
-Currently we have too many ideas to take ahead this profile swticher and make it more convenient and easy
+Currently we have too many ideas to take ahead this profile switcher and make it more convenient and easy.
