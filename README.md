@@ -36,13 +36,13 @@ chmod +x ./gcps
 ## x84_64/AMD64
 Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_x86_64.exe -O gcps.exe
 ## i386
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_Windows_i386.exe -O gcps.exe
+Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_i386.exe -O gcps.exe
 ## armv6
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_Windows_armv6.exe -O gcps.exe
+Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_armv6.exe -O gcps.exe
 ## armv7
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_Windows_armv7.exe -O gcps.exe
+Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_armv7.exe -O gcps.exe
 ## armv64
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_Windows_arm64.exe -O gcps.exe
+Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_arm64.exe -O gcps.exe
 
 ICACLS ".\gcps.exe" /grant:r "users:(RX)" /C
 .\gcps.exe
