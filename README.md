@@ -26,7 +26,7 @@ mv ./gcps /usr/local/bin/
 
 - Switch to particular profile `gcps {profile_name}`
 
-- Switch to previous list `gcps -`
+- Switch to previous profile `gcps -`
 
 
 ## Future Developement
