@@ -1,6 +1,6 @@
 # Google Cloud Profile Switcher (GCPS)
 
-[![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naman2706/StrapDown.js/graphs/commit-activity) [![GitHub license](https://img.shields.io/github/license/Naman2706/gcps)](https://github.com/Naman2706/gcps/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/v/tag/Naman2706/gcps)](https://github.com/Naman2706/gcps/releases)
+[![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/)  [![GitHub license](https://img.shields.io/github/license/Naman2706/gcps)](https://github.com/Naman2706/gcps/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/v/tag/Naman2706/gcps)](https://github.com/Naman2706/gcps/releases)
 
 
 GCPS allows to switch between google cloud configuration profiles easily.
