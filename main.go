@@ -13,10 +13,10 @@ import (
 
 func main() {
 	// validation
-	if _, err := exec.LookPath("gcloud"); err != nil {
-		log.Println("gcloud command not found")
-		log.Println("Refer to this guide for help to setting up a gcloud")
-		log.Println("https://cloud.google.com/sdk/docs/install")
+	if _, err := exec.LookPath("gcloud");  err != nil {
+		fmt.Println("gcloud command not found")
+		fmt.Println("Refer to this guide for help to setting up a gcloud")
+		fmt.Println("https://cloud.google.com/sdk/docs/install")
 		return
 	}
 
@@ -43,7 +43,7 @@ func main() {
 			if err != nil {
 				log.Fatalf("Error while reading file: %v", err)
 			} else if lastProfile == "" {
-				log.Println("No previous profile found. Please select profile from below")
+				fmt.Println("No previous profile found. Please select profile from below")
 			} else {
 				seletedProfile = lastProfile
 			}
@@ -72,7 +72,7 @@ func main() {
 			log.Fatalf("Error while writing last activate profile: %v", err)
 		}
 	} else if activeProfile == seletedProfile {
-		log.Printf("Activate profile %s. No need to switch again\n", seletedProfile)
+		fmt.Printf("Activate profile %s. No need to switch again\n", seletedProfile)
 		return
 	} else {
 		err := file.WriteLastProfile(activeProfile)
@@ -85,5 +85,5 @@ func main() {
 		log.Fatalf("Error setting up the profile: %v", err)
 	}
 
-	log.Printf("Switched profile to %s successfully!!", seletedProfile)
+	fmt.Printf("Switched profile to %s successfully!!\n", seletedProfile)
 }
