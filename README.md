@@ -37,10 +37,6 @@ chmod +x ./gcps
 Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_x86_64.exe -O gcps.exe
 ## i386
 Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_i386.exe -O gcps.exe
-## armv6
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_armv6.exe -O gcps.exe
-## armv7
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_armv7.exe -O gcps.exe
 ## armv64
 Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_arm64.exe -O gcps.exe
 
