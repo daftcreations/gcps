@@ -44,7 +44,13 @@ ICACLS ".\gcps.exe" /grant:r "users:(RX)" /C
 .\gcps.exe
 ```
 
-## Stargazers over time
+---
+
+### Contributors
+
+![Contributors](https://contrib.rocks/image?repo=Naman2706/gcps&columns=80)
+
+### Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/Naman2706/gcps.svg)](https://starchart.cc/Naman2706/gcps)
 
