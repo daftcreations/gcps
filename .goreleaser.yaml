@@ -8,9 +8,6 @@ builds:
       - linux
       - windows
       - darwin
-      # - freebsd
-      # - openbsd
-      # - solaris
     goarch:
       - amd64
       - "386"
@@ -26,6 +23,14 @@ builds:
     hooks:
       post:
         - cmd: sh -cx 'upx --ultra-brute --best {{ .Path }} || true'
+    ignore:
+      - goos: windows
+        goarch: arm
+        goarm: "6"
+      - goos: windows
+        goarch: arm
+        goarm: "7"
+
 archives:
   - id: archives
     format: tar.gz
