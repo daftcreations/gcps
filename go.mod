@@ -1,4 +1,4 @@
-module github.com/naman2706/gcps
+module github.com/daftcreations/gcps
 
 go 1.17
 
