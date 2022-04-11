@@ -1,8 +1,8 @@
 # Google Cloud Profile Switcher (GCPS)
 
-<center>
+<div align="center">
     <img src="https://ik.imagekit.io/xidahcxomtd/gcps_logo_6b3g1MiNF.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1649701365979" style="width:150px; border-radius:10px;"/>
-</center><br>
+</div><br>
 <p style="text-align:center;">
     <a href="https://github.com/daftcreations/gcps/blob/master/LICENSE"><img src="https://img.shields.io/github/license/daftcreations/gcps?style=flat-square"/></a>
     <a href="https://github.com/daftcreations/gcps/releases"><img src="https://img.shields.io/github/v/tag/daftcreations/gcps?style=flat-square"/></a>
