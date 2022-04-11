@@ -3,7 +3,7 @@ name: Links
 on:
   push:
     paths:
-      - ".github/workflows/**"
+      - ".github/workflows/links.yml"
       - "**.md"
 
 jobs:
