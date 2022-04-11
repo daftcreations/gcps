@@ -44,7 +44,7 @@ iwr -useb instl.sh/daftcreations/gcps/windows | iex
 
 ## Future Development
 
-Check our project and socials
+Check out [projects](https://github.com/daftcreations/gcps/projects/1) and our socials
 
 ---
 
