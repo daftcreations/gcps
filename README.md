@@ -34,7 +34,7 @@ OR
 curl -fsSL instl.sh/daftcreations/gcps/linux | bash
 
 ## MacOS (m1 and intel)
-curl -fsSL instl.sh/daftcreations/gcps/linux | bash
+curl -fsSL instl.sh/daftcreations/gcps/macos | bash
 
 ## Windows
 iwr -useb instl.sh/daftcreations/gcps/windows | iex
