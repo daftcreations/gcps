@@ -44,7 +44,7 @@ curl -fsSL instl.sh/daftcreations/gcps/macos | bash
 iwr -useb instl.sh/daftcreations/gcps/windows | iex
 ```
 
-> probably have to source `.bashrc` or `.zshrc` or `.profile` to make it work
+> probably have to source `.bashrc`, `.zshrc` or `.profile` to make it work
 
 ### Future Development
 
