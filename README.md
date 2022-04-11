@@ -1,7 +1,7 @@
 # Google Cloud Profile Switcher (GCPS)
 
 <div align="center">
-    <img src="https://ik.imagekit.io/xidahcxomtd/gcps_logo_6b3g1MiNF.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1649701365979" style="width:150px; border-radius:10px;"/>
+    <img src="https://ik.imagekit.io/xidahcxomtd/gcps_logo_6b3g1MiNF.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1649701365979" style="width:200px; border-radius:10px;"/>
 </div><br>
 <p align="center">
     <a href="https://github.com/daftcreations/gcps/blob/master/LICENSE"><img src="https://img.shields.io/github/license/daftcreations/gcps?style=flat-square"/></a>
@@ -15,7 +15,7 @@ Switch between Google Cloud Profiles easily
 
 ## Usage
 
-<img src="docs/demo.gif" width="100%">
+<img src="docs/demo.gif" width="80%">
 
 - Switch through list `gcps` will return configured profile.
 
