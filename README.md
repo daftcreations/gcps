@@ -1,7 +1,6 @@
 # Google Cloud Profile Switcher (GCPS)
 
-[![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/)  [![GitHub license](https://img.shields.io/github/license/Naman2706/gcps)](https://github.com/Naman2706/gcps/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/v/tag/Naman2706/gcps)](https://github.com/Naman2706/gcps/releases)
-
+[![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/)  [![GitHub license](https://img.shields.io/github/license/daftcreations/gcps)](https://github.com/daftcreations/gcps/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/v/tag/daftcreations/gcps)](https://github.com/daftcreations/gcps/releases)
 
 GCPS allows to switch between google cloud configuration profiles easily.
 
@@ -9,7 +8,7 @@ GCPS allows to switch between google cloud configuration profiles easily.
 
 ```bash
 # for linux systems
-curl -o gcps https://github.com/Naman2706/gcps/releases/download/latest/gcps-all-{os}-{architecture}
+curl -o gcps https://github.com/daftcreations/gcps/releases/download/latest/gcps-all-{os}-{architecture}
 
 chmod +x ./gcps
 
@@ -19,7 +18,6 @@ mv ./gcps /usr/local/bin/
 
 ## Usage
 
-
 <img src="demo.gif" width="100%">
 
 - Switch through list `gcps` will return configured profile.
@@ -28,7 +26,6 @@ mv ./gcps /usr/local/bin/
 
 - Switch to previous profile `gcps -`
 
-
 ## Future Development
 
-Currently we have too many ideas to take ahead this profile switcher and make it more convenient and easy.
+Check our project page

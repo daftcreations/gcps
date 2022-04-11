@@ -3,8 +3,8 @@ package cmd
 import (
 	"strings"
 
+	"github.com/daftcreations/gcps/pkg/types"
 	"github.com/manifoldco/promptui"
-	"github.com/naman2706/gcps/pkg/types"
 )
 
 func GetProfileFromUser(list []types.List) (string, error) {

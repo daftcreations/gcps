@@ -3,7 +3,7 @@ package gcp
 import (
 	"testing"
 
-	"github.com/naman2706/gcps/pkg/types"
+	"github.com/daftcreations/gcps/pkg/types"
 	"github.com/stretchr/testify/require"
 )
 
