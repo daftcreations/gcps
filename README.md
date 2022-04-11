@@ -24,7 +24,7 @@ Switch between Google Cloud Profiles easily
 Golang
 
 ```shell
-go install github.com/naman2706/gcps@latest
+go install github.com/daftcreations/gcps@latest
 ```
 
 OR
@@ -37,7 +37,7 @@ curl -fsSL instl.sh/daftcreations/gcps/linux | bash
 curl -fsSL instl.sh/daftcreations/gcps/linux | bash
 
 ## Windows
-iwr -useb instl.sh/username/reponame/windows | iex
+iwr -useb instl.sh/daftcreations/gcps/windows | iex
 ```
 
 > probably have to source `.bashrc` or `.zshrc` or `.profile` to make it work
