@@ -50,21 +50,21 @@ iwr -useb instl.sh/daftcreations/gcps/windows | iex
 
 Check out [projects](https://github.com/daftcreations/gcps/projects/1) and our socials
 
-<center>
+<div align="center">
     <a href="https://discord.com/channels/960581263264219186/960618259244257330"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/></a>
     <a href="https://www.youtube.com/c/DaftCreation/playlists"><img src="https://img.shields.io/youtube/channel/subscribers/UCDrfHGsm6bJI7Sli7vlcteA?label=YT&logo=youtube&style=for-the-badge"/></a>
     <a href="https://twitter.com/daftcreation"><img src="https://img.shields.io/twitter/follow/daftcreation?logo=twitter&style=for-the-badge"/></a>
     <a href="https://www.instagram.com/daft.creations/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
-</center>
+</div>
 
-<center>
+<div align="center">
     <div style="display:flex; justify-content:space-around;">
         <hr align="right" width="20%">
         <h3 style="margin:-5px 10px 5px;">Contributors</h3>
         <hr align="left" width="20%">
     </div>
     <img src="https://contrib.rocks/image?repo=daftcreations/gcps&columns=80" style="width:150px;"/>
-</center>
+</div>
 
 ### Stargazers over time
 <center>
