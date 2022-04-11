@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"os/exec"
 
-	"github.com/naman2706/gcps/pkg/types"
+	"github.com/daftcreations/gcps/pkg/types"
 )
 
 // get list of profile

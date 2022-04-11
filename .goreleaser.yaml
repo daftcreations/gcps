@@ -8,9 +8,6 @@ builds:
       - linux
       - windows
       - darwin
-      # - freebsd
-      # - openbsd
-      # - solaris
     goarch:
       - amd64
       - "386"
@@ -26,6 +23,14 @@ builds:
     hooks:
       post:
         - cmd: sh -cx 'upx --ultra-brute --best {{ .Path }} || true'
+    ignore:
+      - goos: windows
+        goarch: arm
+        goarm: "6"
+      - goos: windows
+        goarch: arm
+        goarm: "7"
+
 archives:
   - id: archives
     format: tar.gz
@@ -37,13 +42,12 @@ archives:
       linux: Linux
       windows: Windows
       386: i386
-      amd64: x86_64
     format_overrides:
       - goos: windows
         format: zip
   - id: bins
     format: binary
-    name_template: "{{ .Binary }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
+    name_template: "{{ .Binary }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}{{ if .Mips }}_{{ .Mips }}{{ end }}"
     replacements:
       openbsd: OpenBSD
       freebsd: FreeBSD
@@ -51,7 +55,6 @@ archives:
       linux: Linux
       windows: Windows
       386: i386
-      amd64: x86_64
 checksum:
   name_template: "checksums.txt"
 snapshot:
@@ -62,6 +65,3 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
-
-sboms:
-  - artifacts: archive

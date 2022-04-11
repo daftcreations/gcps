@@ -26,9 +26,7 @@ jobs:
           cp $(find . -name 'upx' -type f) /usr/local/bin/upx
           curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
 
-      - uses: actions/setup-go@v2
-        with:
-          go-version: 1.17
+      - { uses: actions/setup-go@v3, with: { go-version: 1.17 } }
 
       - uses: goreleaser/goreleaser-action@v2
         with:

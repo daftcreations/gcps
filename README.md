@@ -1,6 +1,6 @@
 # Google Cloud Profile Switcher (GCPS)
 
-[![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/) [![Go Report Card](https://goreportcard.com/badge/github.com/Naman2706/gcps)](https://goreportcard.com/report/github.com/Naman2706/gcps) [![GitHub license](https://img.shields.io/github/license/Naman2706/gcps)](https://github.com/Naman2706/gcps/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/v/tag/Naman2706/gcps)](https://github.com/Naman2706/gcps/releases)
+[![Go](https://img.shields.io/badge/--00ADD8?logo=go&logoColor=ffffff)](https://golang.org/)  [![GitHub license](https://img.shields.io/github/license/daftcreations/gcps)](https://github.com/daftcreations/gcps/blob/master/LICENSE) [![GitHub release](https://img.shields.io/github/v/tag/daftcreations/gcps)](https://github.com/daftcreations/gcps/releases)
 
 Switch between Google Cloud Profiles easily
 
@@ -24,27 +24,11 @@ go install github.com/naman2706/gcps@latest
 
 Or
 
-```shell
-# For linux and mac systems
-curl -Lso ./gcps https://github.com/Naman2706/gcps/releases/download/latest/gcps_$(uname -s)_$(uname -m)
-chmod +x ./gcps
-./gcps
-```
-
-```powershell
-# For windows powershell
-## x84_64/AMD64
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_x86_64.exe -O gcps.exe
-## i386
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_i386.exe -O gcps.exe
-## armv64
-Invoke-WebRequest https://github.com/Naman2706/gcps/releases/download/latest/gcps_Windows_arm64.exe -O gcps.exe
-
-ICACLS ".\gcps.exe" /grant:r "users:(RX)" /C
-.\gcps.exe
-```
-
 ---
+
+## Future Development
+
+Check our project page
 
 ### Contributors
 

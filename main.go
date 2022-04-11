@@ -6,14 +6,14 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/naman2706/gcps/pkg/cmd"
-	"github.com/naman2706/gcps/pkg/file"
-	"github.com/naman2706/gcps/pkg/gcp"
+	"github.com/daftcreations/gcps/pkg/cmd"
+	"github.com/daftcreations/gcps/pkg/file"
+	"github.com/daftcreations/gcps/pkg/gcp"
 )
 
 func main() {
 	// validation
-	if _, err := exec.LookPath("gcloud");  err != nil {
+	if _, err := exec.LookPath("gcloud"); err != nil {
 		fmt.Println("gcloud command not found")
 		fmt.Println("Refer to this guide for help to setting up a gcloud")
 		fmt.Println("https://cloud.google.com/sdk/docs/install")
