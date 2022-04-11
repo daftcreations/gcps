@@ -55,11 +55,11 @@ Check out [projects](https://github.com/daftcreations/gcps/projects/1) and our s
 
 ### Contributors
 
-![Contributors](https://contrib.rocks/image?repo=Naman2706/gcps&columns=80)
+![Contributors](https://contrib.rocks/image?repo=daftcreations/gcps&columns=80)
 
 ### Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/Naman2706/gcps.svg)](https://starchart.cc/Naman2706/gcps)
+[![Stargazers over time](https://starchart.cc/daftcreations/gcps.svg)](https://starchart.cc/daftcreations/gcps)
 
 ---
 
