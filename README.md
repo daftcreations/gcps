@@ -50,7 +50,7 @@ Check our project and socials
 
 [![Discrod](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/channels/960581263264219186/960618259244257330)
 [![Daft Creation](https://img.shields.io/youtube/channel/subscribers/UCDrfHGsm6bJI7Sli7vlcteA?label=YT&logo=youtube&style=for-the-badge)](https://www.youtube.com/c/DaftCreation/playlists)
-[![Twitter](https://img.shields.io/twitter/follow/daftcreation?logo=twitter&style=for-the-badge)](twitter.com/daftcreation)
+[![Twitter](https://img.shields.io/twitter/follow/daftcreation?logo=twitter&style=for-the-badge)](https://twitter.com/daftcreation)
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/daft.creations/)
 
 ### Contributors
