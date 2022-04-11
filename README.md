@@ -46,9 +46,11 @@ iwr -useb instl.sh/daftcreations/gcps/windows | iex
 
 > probably have to source `.bashrc` or `.zshrc` or `.profile` to make it work
 
-## Future Development
+### Future Development
 
 Check out [projects](https://github.com/daftcreations/gcps/projects/1) and our socials
+
+---
 
 <div align="center">
     <a href="https://discord.com/channels/960581263264219186/960618259244257330"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"/></a>
@@ -59,7 +61,6 @@ Check out [projects](https://github.com/daftcreations/gcps/projects/1) and our s
 
 <div align="center">
     <div style="display:flex; justify-content:space-around;">
-        <hr align="right" width="20%">
         <h3 style="margin:-5px 10px 5px;">Contributors</h3>
         <hr align="left" width="20%">
     </div>
