@@ -71,6 +71,6 @@ Check out [projects](https://github.com/daftcreations/gcps/projects/1) and our s
 <center>
     <a href="https://starchart.cc/daftcreations/gcps"><img src="https://starchart.cc/daftcreations/gcps.svg" width="80%"/></a>
 </center>
----
 
-> > *May the source be with you*
+
+> *May the source be with you*
