@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  vscode:
+    build: .
+    image: zipper
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ../:/workspace
+      # Docker socket to access Docker server
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Docker configuration
+      - ~/.docker:/root/.docker:z
+      # SSH directory for Linux, OSX and WSL
+      - ~/.ssh:/root/.ssh:z
+      # For Windows without WSL, a copy will be made
+      # from /tmp/.ssh to ~/.ssh to fix permissions
+      #- ~/.ssh:/tmp/.ssh:ro
+      # Shell history persistence
+      - ~/.zsh_history:/root/.zsh_history:z
+      # Git config
+      - ~/.gitconfig:/root/.gitconfig:z
+    environment:
+      - TZ=
+    cap_add:
+      # For debugging with dlv
+      # - SYS_PTRACE
+      - NET_ADMIN
+    security_opt:
+      # For debugging with dlv
+      - seccomp:unconfined
+    entrypoint: zsh -c "tail -f /dev/null"

@@ -1,0 +1,110 @@
+{
+  "name": "zipper",
+  "service": "vscode",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "runServices": [
+    "vscode"
+  ],
+  "shutdownAction": "stopCompose",
+  "postCreateCommand": "~/.windows.sh && go mod download && go mod tidy",
+  "workspaceFolder": "/workspace",
+  "extensions": [
+    "golang.go",
+    "eamodio.gitlens",
+    "davidanson.vscode-markdownlint",
+    "ms-azuretools.vscode-docker",
+    "shardulm94.trailing-spaces",
+    "bierner.emojisense",
+    "stkb.rewrap",
+    "vscode-icons-team.vscode-icons",
+    "github.vscode-pull-request-github",
+    "redhat.vscode-yaml",
+    "IBM.output-colorizer",
+    "hashicorp.terraform",
+    "mohsen1.prettify-json", // Prettify JSON data
+  ],
+  "settings": {
+    "files.eol": "\n",
+    "files.autoSaveDelay": 5000,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true,
+    "remote.extensionKind": {
+      "ms-azuretools.vscode-docker": "workspace"
+    },
+    "files.associations": {
+      "*.hcl": "terraform",
+      "*.yml": "yaml",
+      "*.yaml": "yaml",
+      "*.yml.j2": "yaml",
+      "*.yaml.j2": "yaml",
+      "*.json.j2": "json",
+    },
+    "editor.codeActionsOnSaveTimeout": 3000,
+    "editor.wordWrapColumn": 80,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.rulers": [
+      80, // <- a ruler in the default color or as customized (with "editorRuler.foreground") at column 100
+      {
+        "column": 100,
+        "color": "#ff0000"
+      },
+    ],
+    "go.useLanguageServer": true,
+    "[go]": {
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "golang.go",
+      "editor.insertSpaces": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+      },
+      "editor.snippetSuggestions": "none"
+    },
+    "[go.mod]": {
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+      },
+    },
+    "gopls": {
+      "usePlaceholders": false,
+      "staticcheck": true
+    },
+    "go.autocompleteUnimportedPackages": true,
+    "go.gotoSymbol.includeImports": true,
+    "go.gotoSymbol.includeGoroot": true,
+    "go.lintTool": "golangci-lint",
+    "go.buildOnSave": "workspace",
+    "go.lintOnSave": "workspace",
+    "go.vetOnSave": "workspace",
+    "editor.formatOnSave": true,
+    "go.toolsEnvVars": {
+      "GOFLAGS": "-tags=",
+      "CGO_ENABLED": 0
+    },
+    "gopls.env": {
+      "GOFLAGS": "-tags="
+    },
+    "go.testEnvVars": {
+      "": "",
+    },
+    "go.testFlags": [
+      "-v",
+      "-race"
+    ],
+    "go.coverOnSingleTest": true,
+    "go.coverOnSingleTestFile": true,
+    "go.coverOnTestPackage": true
+  }
+}

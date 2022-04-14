@@ -1,0 +1,105 @@
+{
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  "files.watcherExclude": {
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true,
+      "**/.svn": true,
+      "**/.git": true,
+      "**/__pycache__": true,
+      "**/node_modules": true,
+      "**/.min.js": true,
+      "**/.map": true,
+      "**/.pyc": true,
+      "**/.pyo": true,
+      "**/.exe": true,
+      "**/.dll": true,
+      "**/.obj": true,
+      "**/.o": true,
+      "**/.a": true,
+      "**/.lib": true,
+      "**/.so": true,
+      "**/.dylib": true,
+      "**/.ncb": true,
+      "**/.sdf": true,
+      "**/.suo": true,
+      "**/.pdb": true,
+      "**/.idb": true,
+      "**/.DS_Store": true,
+      "**/.psd": true,
+      "**/.svn/**": true
+    },
+  },
+  "files.associations": {
+    "*.nomad": "terraform",
+    "*.job": "terraform",
+    "*.hcl": "terraform",
+    "*.lib": "ytt",
+    "*.star": "starlark",
+    "*playbook.(yaml|yml)": "ansible",
+    "*.(yaml|yml)": "yaml",
+  },
+  //Editor
+  "editor.wordWrapColumn": 80,
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.links": false,
+  "editor.minimap.maxColumn": 80,
+  "editor.minimap.renderCharacters": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": true,
+  "editor.wordSeparators": "./\\\\()\\\"'-:$,.;<>~!@#%^&*|+=[]{}`~?",
+  "editor.glyphMargin": false,
+  "editor.suggestSelection": "first",
+  "editor.fontLigatures": true,
+  "editor.fontWeight": 400,
+  "editor.fontSize": 14,
+  "editor.rulers": [
+    80, // <- a ruler in the default color or as customized (with "editorRuler.foreground") at column 100
+    {
+      "column": 100,
+      "color": "#ff0000"
+    },
+  ],
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "git.pullTags": false,
+  "git.autofetchPeriod": 60,
+  "git.enableSmartCommit": true,
+  // Go
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "golang.go",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "files.eol": "\n", // formatting only supports LF line ending
+  },
+  "go.useLanguageServer": true,
+  "go.vetOnSave": "package",
+  // "go.languageServerExperimentalFeatures": {
+  //     "diagnostics": true,
+  // },
+  "go.lintOnSave": "file",
+  "go.formatTool": "gofmt",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ],
+  "go.toolsManagement.autoUpdate": true,
+  "gopls": {
+    "completeUnimported": true,
+    "formatting.gofumpt": true,
+    "completionDocumentation": true,
+    "ui.completion.usePlaceholders": true,
+    "build.expandWorkspaceToModule": true,
+    "build.experimentalWorkspaceModule": true,
+    "hoverKind": "SynopsisDocumentation" // No/Synopsis/Full, default Synopsis
+  },
+}
