@@ -61,6 +61,6 @@ func TestContainsProfile(t *testing.T) {
 
 	for _, td := range tt {
 		have := ContainsProfile(td.input, td.profile)
-		require.Equal(t, td.want, have, "for %+v want: %s but have: %s", td.input, td.want, have)
+		require.Equal(t, td.want, have, "woops! for %+v want: %s but have: %s", td.input, td.want, have)
 	}
 }
