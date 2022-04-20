@@ -1,6 +1,6 @@
 package types
 
-// to store gcloud configurations json
+// List stores gcloud configurations
 type List struct {
 	Name     string `json:"name"`
 	IsActive bool   `json:"is_active"`
