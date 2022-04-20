@@ -2,6 +2,8 @@ module github.com/daftcreations/gcps
 
 go 1.17
 
+require github.com/mitchellh/go-homedir v1.1.0
+
 require (
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
