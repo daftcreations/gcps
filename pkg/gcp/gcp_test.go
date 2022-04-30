@@ -55,7 +55,7 @@ func TestContainsProfile(t *testing.T) {
 				},
 			},
 			profile: "abc",
-			want:    false,
+			want:    true,
 		},
 	}
 

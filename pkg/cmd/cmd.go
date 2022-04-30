@@ -7,6 +7,7 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
+// GetProfileFromUser prompts user to select desires profile from provided Google Cloud profiles list.
 func GetProfileFromUser(list []types.List) (string, error) {
 	templates := &promptui.SelectTemplates{
 		Label:    "{{ . }}?",

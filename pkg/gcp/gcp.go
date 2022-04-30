@@ -7,7 +7,7 @@ import (
 	"github.com/daftcreations/gcps/pkg/types"
 )
 
-// get list of profile
+// GetProfileList gets a list of Google cloud profiles.
 func GetProfileList() ([]types.List, error) {
 	// run cmd to get list of profiles
 	out, err := exec.Command("gcloud", "config", "configurations", "list", "--format=json").Output()
@@ -16,7 +16,7 @@ func GetProfileList() ([]types.List, error) {
 	}
 
 	// list of profiles
-	list := []types.List{}
+	var list []types.List
 
 	// unmarshal to get the desired value
 	if err := json.Unmarshal(out, &list); err != nil {
@@ -26,7 +26,7 @@ func GetProfileList() ([]types.List, error) {
 	return list, nil
 }
 
-// set the given profile
+// SetProfile sets the given Google cloud profile.
 func SetProfile(profile string) error {
 	if err := exec.Command("gcloud", "config", "configurations", "activate", profile).Run(); err != nil {
 		return err
@@ -34,7 +34,7 @@ func SetProfile(profile string) error {
 	return nil
 }
 
-// Check if the given profile exists in given array
+// ContainsProfile checks if the given Google cloud profile exists in given array.
 func ContainsProfile(arr []types.List, profile string) bool {
 	for _, n := range arr {
 		if n.Name == profile {
@@ -44,6 +44,7 @@ func ContainsProfile(arr []types.List, profile string) bool {
 	return false
 }
 
+// GetActiveProfile gets the active Google Cloud profile.
 func GetActiveProfile(list []types.List) string {
 	for _, n := range list {
 		if n.IsActive {

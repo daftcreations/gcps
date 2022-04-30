@@ -20,8 +20,8 @@ func main() {
 		return
 	}
 
-	// store seleted profile
-	var seletedProfile string
+	// store selected profile
+	var selectedProfile string
 
 	list, err := gcp.GetProfileList()
 	if err != nil {
@@ -45,12 +45,12 @@ func main() {
 			} else if lastProfile == "" {
 				fmt.Println("No previous profile found. Please select profile from below")
 			} else {
-				seletedProfile = lastProfile
+				selectedProfile = lastProfile
 			}
 		} else {
 			isContain := gcp.ContainsProfile(list, os.Args[1])
 			if isContain {
-				seletedProfile = os.Args[1]
+				selectedProfile = os.Args[1]
 			} else {
 				log.Printf("Given profile %s is invalide please select from below!\n", os.Args[1])
 			}
@@ -58,8 +58,8 @@ func main() {
 		}
 	}
 
-	if len(seletedProfile) == 0 {
-		seletedProfile, err = cmd.GetProfileFromUser(list)
+	if len(selectedProfile) == 0 {
+		selectedProfile, err = cmd.GetProfileFromUser(list)
 		if err != nil {
 			log.Fatalf("Error while setting up cli: %v", err)
 		}
@@ -67,12 +67,12 @@ func main() {
 
 	activeProfile := gcp.GetActiveProfile(list)
 	if activeProfile == "" {
-		err := file.WriteLastProfile(seletedProfile)
+		err := file.WriteLastProfile(selectedProfile)
 		if err != nil {
 			log.Fatalf("Error while writing last activate profile: %v", err)
 		}
-	} else if activeProfile == seletedProfile {
-		fmt.Printf("Activate profile %s. No need to switch again\n", seletedProfile)
+	} else if activeProfile == selectedProfile {
+		fmt.Printf("Activate profile %s. No need to switch again\n", selectedProfile)
 		return
 	} else {
 		err := file.WriteLastProfile(activeProfile)
@@ -81,9 +81,9 @@ func main() {
 		}
 	}
 
-	if err := gcp.SetProfile(seletedProfile); err != nil {
+	if err := gcp.SetProfile(selectedProfile); err != nil {
 		log.Fatalf("Error setting up the profile: %v", err)
 	}
 
-	fmt.Printf("Switched profile to %s successfully!!\n", seletedProfile)
+	fmt.Printf("Switched profile to %s successfully!!\n", selectedProfile)
 }
