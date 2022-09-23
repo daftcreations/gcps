@@ -3,16 +3,16 @@ name: Links
 on:
   push:
     paths:
-      - ".github/workflows/**"
+      - ".github/workflows/links.yml"
       - "**.md"
 
 jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - uses: lycheeverse/lychee-action@v1.3.0
+      - uses: lycheeverse/lychee-action@v1.4.1
         with:
           fail: true
         env:
