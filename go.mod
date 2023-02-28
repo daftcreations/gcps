@@ -13,6 +13,6 @@ require (
 
 require (
 	github.com/manifoldco/promptui v0.9.0
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 	golang.org/x/sys v0.1.0 // indirect
 )
